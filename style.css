@@ -1,0 +1,159 @@
+body{
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;   
+}
+
+.navbar, .mobile_navbar{
+    background-color: #00630d;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 8px 50px rgba(0, 0, 0, 0.336);
+}
+
+.navbar ul, .mobile_navbar{
+    background-color: #00630d;
+    backdrop-filter: blur(10px);
+    height: 70px;
+    margin: 0; 
+    padding: 0;
+    
+
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar .menu-button {
+    display: none;
+}
+
+@media (max-width: 800px){
+    .hideOnMobile{
+        display: none;
+    }
+    .navbar .menu-button{
+        display: block;
+    }
+}
+
+.navbar li, .mobile_navbar li{
+    height: 100%;
+}
+
+.navbar li:first-child, .mobile_navbar li:first-child{
+    margin-right: auto;
+    padding-left: 20px;
+}
+
+.navbar a, .mobile_navbar a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-family:consolas, monospace;
+    font-size: clamp(1.3rem, 2vw, 1.5rem);
+}
+
+.navbar a:hover, .mobile_navbar a:hover{
+    background-color: rgba(0, 122, 86, 0.637);
+}
+
+.mobile_navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 50%;
+    z-index: 999;
+    background-color: rgba(48, 48, 48, 0.4);
+    backdrop-filter: blur(10px); 
+    box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+footer{
+    background-color:#00630d;
+}
+
+footer p{
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-family:consolas, monospace;
+    font-size: large;
+}
+
+footer h3{
+    color: white;
+    text-align: center;
+    font-family:consolas, monospace;
+    font-size: x-large;
+    margin-top: 1rem;
+}
+
+footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;              
+    padding: 1rem 0;
+    
+}
+
+footer .social-links li {
+    list-style: none;
+}
+
+footer .social-links svg {
+    filter:invert(1);
+    width: clamp(30px, 5vw, 40px);
+    height: clamp(30px, 5vw, 40px);
+    object-fit: contain;
+    transition: filter 0.3s ease;
+}
+
+footer .social-links svg:hover {
+    filter:invert(0) drop-shadow(0px 10px 10px #00ff15);
+}
+
+
+
+
+
+
+
+
+main{
+    flex: 1;
+}
+
+.content{
+    width: min(90%, 1100px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-image {
+    width: 100%;
+    
+    /* 56.25vw is the exact mathematical height for a standard 16:9 widescreen image. */
+    /* It forces the div to grow/shrink perfectly with the screen width. */
+    height: 56.25vw; 
+    
+    /* Double check this name exactly matches your file! */
+background-image: url("https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1920&auto=format&fit=crop");    
+    background-attachment: fixed;
+    
+    /* 'cover' is much safer for parallax than '100% auto' */
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+}
