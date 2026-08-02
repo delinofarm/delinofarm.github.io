@@ -217,14 +217,15 @@ main{
 /* Ρυθμίσεις ΜΟΝΟ για κινητά και tablet (οθόνες κάτω από 800px) */
 @media (max-width: 800px) {
     .hero-image {
-        /* 1. Κατεβάζουμε το λευκό στο 90% ή 85% για να έχει αρκετό χώρο να γίνει "σκληρό" άσπρο 
-           και να καλύψει σίγουρα την άκρη της εικόνας */
+        aspect-ratio: auto; 
+        height: calc(100svh - 70px);
+        background-size: 100% 105%, cover;
+
         background-image: 
             linear-gradient(to bottom, rgba(0, 0, 0, 0) 83%, rgba(255, 255, 255, 1) 90%),
             url(home.jpg);        
         /* 2. Κλείνουμε το fixed στα κινητά, καθώς προκαλεί bugs στον υπολογισμό του ύψους */
-        background-attachment: scroll, fixed;
-        background-position: top;
+        background-attachment: scroll, scroll;
     }
     
     .upper-text {
