@@ -6,13 +6,13 @@ body{
 }
 
 .navbar, .mobile_navbar{
-    background-color: #00630d;
+    background-color: #2a3f20;
     backdrop-filter: blur(10px);
     box-shadow: 0px 8px 50px rgba(0, 0, 0, 0.336);
 }
 
 .navbar ul, .mobile_navbar{
-    background-color: #00630d;
+    background-color: #2a3f20;
     backdrop-filter: blur(10px);
     height: 70px;
     margin: 0; 
@@ -59,7 +59,8 @@ body{
 }
 
 .navbar a:hover, .mobile_navbar a:hover{
-    background-color: rgba(0, 122, 86, 0.637);
+    background-color: #3e5a1e;
+    border-radius: 15px;
 }
 
 .mobile_navbar {
@@ -79,7 +80,7 @@ body{
 }
 
 footer{
-    background-color:#00630d;
+    background-color:#2a3f20;
 }
 
 footer p{
@@ -123,7 +124,37 @@ footer .social-links svg:hover {
 }
 
 
+.content{
+    width: min(90%, 1100px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.content .text-section {
+    display: flex;
+    flex-direction: column;
+    background-color: #3a7e4328;
+    gap: 2rem;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    max-width: 1200px;
+    margin: 6rem auto;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsl(0, 0%, 0%);
+}
+
+.content .text-section h2 {
+    font-family:consolas, monospace;
+    font-size: clamp(1rem, 2vw, 2rem);
+    text-align: center;
+}
+
+.content .text-section p {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
+    font-size: clamp(0.9rem, 2vw, 2rem);
+    text-align: left;
+}
 
 
 
@@ -134,7 +165,7 @@ main{
 }
 
 
-/*index*/
+/*start of index*/
 
 .hero-image {
     width: 100%;
@@ -148,8 +179,8 @@ main{
 
     
     background-image: 
-        linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(255, 255, 255, 1) 99%),
-        url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7t_N9MdW53TWg9GI4sd4gpl72fWnU4lIXUUEIZrX5SZlf3BFV5Jsbk6kn&s=10");
+        linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, rgba(255, 255, 255, 1) 98%),
+        url(home.jpg);
     
     /* 
        ΤΟ ΜΥΣΤΙΚΟ 1: Διπλό background-size 
@@ -189,9 +220,8 @@ main{
         /* 1. Κατεβάζουμε το λευκό στο 90% ή 85% για να έχει αρκετό χώρο να γίνει "σκληρό" άσπρο 
            και να καλύψει σίγουρα την άκρη της εικόνας */
         background-image: 
-            linear-gradient(to bottom, rgba(0, 0, 0, 0) 30%, rgba(255, 255, 255, 1) 90%),
-            url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiRJbXq_P3mXfd6RZLhIThZo7r36joMS-LQ59ngqyeVwBDPDZRKYunQO3a&s=10");
-        
+            linear-gradient(to bottom, rgba(0, 0, 0, 0) 83%, rgba(255, 255, 255, 1) 90%),
+            url(home.jpg);        
         /* 2. Κλείνουμε το fixed στα κινητά, καθώς προκαλεί bugs στον υπολογισμό του ύψους */
         background-attachment: scroll, fixed;
         background-position: center top;
@@ -203,34 +233,71 @@ main{
     }
 }
 
-.content{
-    width: min(90%, 1100px);
-    margin: 0 auto;
+
+/*end of index*/
+
+
+
+
+
+/*start of contact*/
+
+.info {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.content .text-section {
-    display: flex;
-    flex-direction: column;
-    background-color: #3a7e4328;
-    gap: 2rem;
-    border-radius: 1rem;
-    padding: 1.5rem;
-    max-width: 1200px;
-    margin: 6rem auto;
-    box-shadow: 0 1.5rem 3rem -0.75rem hsl(0, 0%, 0%);
-}
-
-.content .text-section h2 {
+.info h3{
     font-family:consolas, monospace;
-    font-size: clamp(1rem, 2vw, 2rem);
-    text-align: center;
-}
-
-.content .text-section p {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
-    font-size: clamp(0.9rem, 2vw, 2rem);
+    font-size: clamp(1rem, 1.5vw, 2rem);
     text-align: left;
 }
+
+.info ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+    gap: 5rem;
+}
+
+
+.interactive {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+/* Κινητά & Tablet (κάτω από 800px): Κάθετα */
+@media (max-width: 800px) {
+    .info ul {
+        flex-direction: column;
+        gap: 20px; /* Μικραίνουμε το κενό στο κινητό */
+        align-items: center; /* Κεντράρει τα στοιχεία όμορφα στη μέση */
+    }
+
+    .interactive {
+        flex-direction: column;
+        gap: 20px; /* Μικραίνουμε το κενό στο κινητό */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
