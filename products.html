@@ -28,41 +28,62 @@
 
     <main>
         <div class="content">
-            <h2>Τα προϊόντα μας</h2>
-            <div class="product_list">
-                <div class="product">
-                    <img src="Images/marmelada.jpg" alt="Marmelada">
-                    <h3>Μαρμελάδα</h3>
-                    <p>Φτιαγμένη με αγνά υλικά και παραδοσιακή φροντίδα, η μαρμελάδα μας προσφέρει την αυθεντική γεύση των φρούτων.</p>
-                </div>
 
-                <div class="product">
-                    <img src="Images/meli.jpg" alt="Meli">
-                    <h3>Μέλι</h3>
-                    <p>Το μέλι μας είναι φυσικό και πλούσιο σε θρεπτικά συστατικά, ιδανικό για καθημερινή κατανάλωση.</p>
-                </div>
 
-                <div class="product">
-                    <img src="Images/psomi.jpg" alt="Psomi">
-                    <h3>Ψωμί</h3>
-                    <p>Φτιαγμένο με παραδοσιακές συνταγές, το ψωμί μας είναι φρέσκο και γευστικό.</p>
-                </div>
 
-                <div class="product">
-                    <img src="Images/zymarika.jpg" alt="Zymarika">
-                    <h3>Ζυμαρικά</h3>
-                    <p>Τα ζυμαρικά μας παρασκευάζονται με αγνά υλικά και προσφέρουν την αυθεντική γεύση της Ιταλικής κουζίνας.</p>
-                </div>
 
-                <div class="product">
-                    <img src="Images/olives.jpg" alt="Olives">
-                    <h3>Ελιές</h3>
-                    <p>Οι ελιές μας είναι φρέσκες και πλούσιες σε γεύση, ιδανικές για σαλάτες και μαγειρική.</p>
-                </div>
-            </div>
 
+
+        <div class="products-container">
+            <h1>Τα Προϊόντα Μας</h1>
+
+            <!-- Κατηγορία 1 -->
+            <details class="category-dropdown" open> <!-- Το 'open' σημαίνει ότι θα είναι ανοιχτό από προεπιλογή -->
+                <summary>Μαρμελάδες</summary>
+                <h2>Οι μαρμελάδες μας μπλαμπλαμπλα</h2>
+                <div class="products-grid">
+                    <!-- Κουτί Προϊόντος 1 -->
+                    <a href="gala-product.html" class="product-card">
+                        <img src="home.jpg" alt="Φρέσκο Γάλα">
+                        <h4>Κεράσι</h4>
+                        <p>κεράσι</p>
+                    </a>
+                    <!-- Κουτί Προϊόντος 2 -->
+                    <a href="tyri-product.html" class="product-card">
+                        <img src="home.jpg" alt="Φέτα">
+                        <h4>Βερίκοκο</h4>
+                        <p>βερίκοκο</p>
+                    </a>
+                </div>
+            </details>
+
+            <!-- Κατηγορία 2 -->
+            <details class="category-dropdown">
+                <summary>Γαλακτοκομικά</summary>
+                <div class="products-grid">
+                    <a href="kreas-product.html" class="product-card">
+                        <img src="home.jpg" alt="Μοσχάρι">
+                        <h4>Γάλα</h4>
+                        <p>μπλα</p>
+                    </a>
+                </div>
+            </details>
+
+            <!-- Κατηγορία 3 -->
+            <details class="category-dropdown">
+                <summary>Υπόλοιπα</summary>
+                <div class="products-grid">
+                    <a href="tomates-product.html" class="product-card">
+                        <img src="home.jpg" alt="Ντομάτες">
+                        <h4>Τσάϊ</h4>
+                        <p>μπλα</p>
+                    </a>
+                </div>
+            </details>
         </div>
+    </div>
     </main>
+
 
 
 

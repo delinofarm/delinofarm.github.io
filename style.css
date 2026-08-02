@@ -137,6 +137,7 @@ footer .social-links svg:hover {
     flex-direction: column;
     background-color: #3a7e4328;
     gap: 2rem;
+    border: 3px solid #2b8800;
     border-radius: 1rem;
     padding: 1.5rem;
     max-width: 1200px;
@@ -179,7 +180,7 @@ main{
 
     
     background-image: 
-        linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, rgba(255, 255, 255, 1) 98%),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, rgb(255, 255, 255) 98%),
         url(home.jpg);
     
     /* 
@@ -222,7 +223,7 @@ main{
         background-size: 100% 105%, cover;
 
         background-image: 
-            linear-gradient(to bottom, rgba(0, 0, 0, 0) 83%, rgba(255, 255, 255, 1) 90%),
+            linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, rgb(255, 255, 255) 94%),
             url(home.jpg);        
         /* 2. Κλείνουμε το fixed στα κινητά, καθώς προκαλεί bugs στον υπολογισμό του ύψους */
         background-attachment: scroll, scroll;
@@ -270,6 +271,122 @@ main{
     justify-content: space-between;
 }
 
+/*end of contact*/
+
+
+
+
+
+
+/*start of products*/
+
+/* Container για όλη τη σελίδα προϊόντων */
+.products-container {
+    width: min(90%, 1100px);
+    margin: 40px auto;
+    font-family: consolas, monospace;
+}
+
+.products-container h1, h2 {
+    text-align: center;
+    color: #2a3f20;
+    margin-bottom: 2rem;
+}
+
+/* --- Στυλ για τα Dropdowns (Κατηγορίες) --- */
+.category-dropdown {
+    margin-bottom: 1.5rem;
+    border: 2px solid #2a3f20;
+    border-radius: 8px;
+    background-color: white;
+    overflow: hidden;
+}
+
+/* Το κουμπί/επικεφαλίδα του Dropdown */
+.category-dropdown summary {
+    background-color: #2a3f20;
+    color: white;
+    padding: 1rem 1.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none; /* Κρύβει το προεπιλεγμένο βελάκι σε κάποιους browsers */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.category-dropdown summary:hover {
+    background-color: #008f13;
+}
+
+/* Δημιουργία δικού μας εικονιδίου για το βελάκι */
+.category-dropdown summary::after {
+    content: "▼";
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+/* Όταν το dropdown είναι ανοιχτό, γυρίζει το βελάκι προς τα πάνω */
+.category-dropdown[open] summary::after {
+    transform: rotate(180deg);
+}
+
+/* --- Στυλ για τα Κουτιά των Προϊόντων --- */
+.products-grid {
+    display: grid;
+    /* Αυτό φτιάχνει αυτόματα όσες στήλες χωράνε! */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #f4fdf6;
+}
+
+/* Η κάρτα (box) του κάθε προϊόντος */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none; /* Αφαιρεί την υπογράμμιση από το link */
+    color: black;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Εφέ όταν περνάς το ποντίκι από πάνω (Hover) */
+.product-card:hover {
+    transform: translateY(-8px); /* Το κουτί σηκώνεται ελαφρώς προς τα πάνω */
+    box-shadow: 0px 10px 20px rgba(0, 99, 13, 0.3); /* Πρασινίζει λίγο η σκιά */
+}
+
+/* Η εικόνα μέσα στην κάρτα */
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* Κόβει την εικόνα σωστά χωρίς να την παραμορφώνει */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-card h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+    color: #2a3f20;
+}
+
+.product-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+    font-family: Arial, Helvetica, sans-serif; /* Λίγο πιο ευανάγνωστη γραμματοσειρά για το μικρό κείμενο */
+}
+
+/*end of products*/
 
 
 
