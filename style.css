@@ -188,7 +188,7 @@ main{
        - Το '100vw auto' εφαρμόζεται στην εικόνα (για να ακούει μόνο στο πλάτος)
     */
     background-size: 100% 101%, 100vw auto;
-    background-position: center, center top;
+    background-position: center, top;
     background-repeat: no-repeat;
     background-attachment: scroll, fixed;
 }
@@ -224,7 +224,7 @@ main{
             url(home.jpg);        
         /* 2. Κλείνουμε το fixed στα κινητά, καθώς προκαλεί bugs στον υπολογισμό του ύψους */
         background-attachment: scroll, fixed;
-        background-position: center top;
+        background-position: top;
     }
     
     .upper-text {
