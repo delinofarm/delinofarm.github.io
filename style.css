@@ -42,10 +42,18 @@ body{
     height: 100%;
 }
 
-.navbar li:first-child, .mobile_navbar li:first-child{
+.navbar li:first-child{
     margin-right: auto;
     padding-left: 20px;
 }
+
+.navbar img{
+    height: 100%;
+    width: auto;
+    display: block;
+    object-fit: cover;
+}
+
 
 .navbar a, .mobile_navbar a{
     height: 100%;
@@ -58,7 +66,8 @@ body{
     font-size: clamp(1.3rem, 2vw, 1.5rem);
 }
 
-.navbar a:hover, .mobile_navbar a:hover{
+.navbar li:not(:first-child) a:hover, 
+.mobile_navbar li:not(:first-child) a:hover {
     background-color: #3e5a1e;
     border-radius: 15px;
 }
@@ -78,6 +87,17 @@ body{
     align-items: flex-start;
     justify-content: flex-start;
 }
+
+.mobile_navbar li{
+    width: 100%;
+    height: 90px;
+}
+
+.mobile_navbar li:first-child{
+    height: 110px;
+}
+
+
 
 footer{
     background-color:#2a3f20;
@@ -135,9 +155,9 @@ footer .social-links svg:hover {
 .content .text-section {
     display: flex;
     flex-direction: column;
-    background-color: #3a7e4328;
+    background-color: #2a3f2027;
     gap: 2rem;
-    border: 3px solid #2b8800;
+    border: 3px solid #2a3f2058;
     border-radius: 1rem;
     padding: 1.5rem;
     max-width: 1200px;
@@ -181,7 +201,7 @@ main{
     
     background-image: 
         linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, rgb(255, 255, 255) 98%),
-        url(home.jpg);
+        url(images/home.jpg);
     
     /* 
        ΤΟ ΜΥΣΤΙΚΟ 1: Διπλό background-size 
@@ -211,8 +231,25 @@ main{
     text-shadow: 0px 0px 10px rgb(0, 0, 0);
 
     font-family:consolas, monospace;
-    font-size: clamp(0.9rem, 2vw, 3rem);
-        
+    font-size: clamp(0.9rem, 2vw, 3rem);   
+}
+
+.photo-section {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.photo-section img {
+    flex: 1; 
+    min-width: 0;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsl(0, 0%, 0%);
+    margin-bottom: 2rem;
 }
 
 /* Ρυθμίσεις ΜΟΝΟ για κινητά και tablet (οθόνες κάτω από 800px) */
@@ -224,7 +261,7 @@ main{
 
         background-image: 
             linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, rgb(255, 255, 255) 94%),
-            url(home.jpg);        
+            url(images/home.jpg);        
         /* 2. Κλείνουμε το fixed στα κινητά, καθώς προκαλεί bugs στον υπολογισμό του ύψους */
         background-attachment: scroll, scroll;
     }
@@ -232,6 +269,11 @@ main{
     .upper-text {
         /* Προαιρετικά: Μειώνουμε λίγο το κενό στο κάτω μέρος για τα κινητά */
         margin-bottom: 10vw; 
+    }
+
+    .photo-section {
+        flex-direction: column;
+        gap: 1rem;
     }
 }
 
@@ -280,7 +322,6 @@ main{
 
 /*start of products*/
 
-/* Container για όλη τη σελίδα προϊόντων */
 .products-container {
     width: min(90%, 1100px);
     margin: 40px auto;
@@ -293,7 +334,6 @@ main{
     margin-bottom: 2rem;
 }
 
-/* --- Στυλ για τα Dropdowns (Κατηγορίες) --- */
 .category-dropdown {
     margin-bottom: 1.5rem;
     border: 2px solid #2a3f20;
@@ -302,7 +342,6 @@ main{
     overflow: hidden;
 }
 
-/* Το κουμπί/επικεφαλίδα του Dropdown */
 .category-dropdown summary {
     background-color: #2a3f20;
     color: white;
@@ -310,65 +349,79 @@ main{
     font-size: 1.3rem;
     font-weight: bold;
     cursor: pointer;
-    list-style: none; /* Κρύβει το προεπιλεγμένο βελάκι σε κάποιους browsers */
+    list-style: none; 
     display: flex;
     justify-content: space-between;
     align-items: center;
     transition: background-color 0.3s;
 }
 
+
 .category-dropdown summary:hover {
     background-color: #008f13;
 }
 
-/* Δημιουργία δικού μας εικονιδίου για το βελάκι */
 .category-dropdown summary::after {
     content: "▼";
     font-size: 1rem;
     transition: transform 0.3s ease;
 }
 
-/* Όταν το dropdown είναι ανοιχτό, γυρίζει το βελάκι προς τα πάνω */
 .category-dropdown[open] summary::after {
     transform: rotate(180deg);
 }
 
-/* --- Στυλ για τα Κουτιά των Προϊόντων --- */
+:root {
+  interpolate-size: allow-keywords;
+}
+
+.category-dropdown::details-content {
+  opacity: 0;
+  height: 0; /* Ξεκινάει κλειστό */
+  overflow: hidden; 
+  
+  transition: 
+    height 400ms ease-out,
+    opacity 400ms ease-out,
+    content-visibility 400ms allow-discrete;
+}
+
+.category-dropdown[open]::details-content {
+  opacity: 1;
+  height: auto; 
+}
+
 .products-grid {
     display: grid;
-    /* Αυτό φτιάχνει αυτόματα όσες στήλες χωράνε! */
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
-    background-color: #f4fdf6;
+    background-color: #ffffff;
 }
 
-/* Η κάρτα (box) του κάθε προϊόντος */
 .product-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    text-decoration: none; /* Αφαιρεί την υπογράμμιση από το link */
+    text-decoration: none; 
     color: black;
     background-color: white;
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1.5rem 3rem -0.75rem hsl(0, 0%, 0%);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Εφέ όταν περνάς το ποντίκι από πάνω (Hover) */
 .product-card:hover {
-    transform: translateY(-8px); /* Το κουτί σηκώνεται ελαφρώς προς τα πάνω */
-    box-shadow: 0px 10px 20px rgba(0, 99, 13, 0.3); /* Πρασινίζει λίγο η σκιά */
+    transform: translateY(-8px); 
+    box-shadow: 0px 10px 20px #008f13; 
 }
 
-/* Η εικόνα μέσα στην κάρτα */
 .product-card img {
     width: 100%;
     height: 180px;
-    object-fit: cover; /* Κόβει την εικόνα σωστά χωρίς να την παραμορφώνει */
+    object-fit: cover; 
     border-radius: 8px;
     margin-bottom: 15px;
 }
@@ -383,7 +436,7 @@ main{
     margin: 0;
     font-size: 0.9rem;
     color: #555;
-    font-family: Arial, Helvetica, sans-serif; /* Λίγο πιο ευανάγνωστη γραμματοσειρά για το μικρό κείμενο */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /*end of products*/
@@ -405,6 +458,8 @@ main{
         flex-direction: column;
         gap: 20px; /* Μικραίνουμε το κενό στο κινητό */
     }
+
+
 }
 
 
