@@ -286,19 +286,19 @@ main{
 
 /*start of contact*/
 
-.info {
+.contact {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-.info h3{
+.contact h3{
     font-family:consolas, monospace;
     font-size: clamp(1rem, 1.5vw, 2rem);
     text-align: left;
 }
 
-.info ul{
+.contact ul{
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -306,11 +306,52 @@ main{
     gap: 5rem;
 }
 
-
 .interactive {
     display: flex;
     width: 100%;
     justify-content: space-between;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    max-width: 500px;
+    text-align: left;
+    background-color: #2a3f2027;
+    gap: 2rem;
+    border: 3px solid #2a3f2058;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    max-width: 1200px;
+    margin: 6rem auto;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsl(0, 0%, 0%);
+}
+
+.info img{
+    width: 50px;
+    height: 50px;
+}
+
+@media (max-width: 800px) {
+    .info ul {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .interactive {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .info {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
 }
 
 /*end of contact*/
@@ -446,21 +487,7 @@ main{
 
 
 
-/* Κινητά & Tablet (κάτω από 800px): Κάθετα */
-@media (max-width: 800px) {
-    .info ul {
-        flex-direction: column;
-        gap: 20px; /* Μικραίνουμε το κενό στο κινητό */
-        align-items: center; /* Κεντράρει τα στοιχεία όμορφα στη μέση */
-    }
 
-    .interactive {
-        flex-direction: column;
-        gap: 20px; /* Μικραίνουμε το κενό στο κινητό */
-    }
-
-
-}
 
 
 
