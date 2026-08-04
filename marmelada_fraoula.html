@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Delino Farm | Αρχική</title>
+    <title>Delino Farm | Μαρμελάδα Φράουλα</title>
 </head>
 <body>
-     <nav class="navbar">
+    <nav class="navbar">
         <ul>
             <li><a href="index.html"><img src="images/logo.jpg" alt="Delino Farm Logo" width="100" height="100"></a></li>
             <li class="hideOnMobile"><a href="index.html">Αρχική</a></li>
@@ -18,7 +18,7 @@
         </ul>
     </nav>
     <ul class="mobile_navbar">
-        <li onclick="hideBar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="white"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-2２４-２２４ ２２４Z"/></svg></a></li>
+        <li onclick="hideBar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="white"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
         <li><a href="index.html">Αρχική</a></li>
         <li><a href="about.html">Ποιοί είμαστε</a></li>
         <li><a href="products.html">Προϊόντα</a></li>
@@ -28,44 +28,17 @@
 
     <main>
         <div class="content">
-
-            <div class="info">
-                <img src="images/info-circle.svg">
-                <p>Μπορείτε να επικοινωνήσετε μαζί μας μέσω email, τηλέφωνο ή απλά αφήστε το μήνυμά σας μέσω της παρακάτω φόρμας και θα επικοινωνήσουμε εμείς μαζί σας.<br><br> Εναλλακτικά, μπορείτε να επισκεφθείτε το κατάστημά μας για να δείτε τα προϊόντα μας από κοντά.</p>
+            <div class="product-info">
+                <h1>Μαρμελάδα Φράουλα</h1>
+                <h3>Τιμή: 5€</h3>
+                <p>Περιγραφή της μαρμελάδας φράουλα.</p>
             </div>
-            <div class="contact">
-                <ul>
-                    <li><strong>Σπύρος Παπαδόπουλος</strong><br>Κτηνοτρόφος – Αγροτικές εργασίες<br>+30 6987858819</li>
-                    <li><strong>Άννα Καλακίδου</strong><br>Υπεύθυνη πωλήσεων – Social Media<br>+30 6947463704</li>
-                </ul>
-            </div>
-
-            <div class="interactive">
-                <div class="message">
-                     <form action="https://api.web3forms.com/submit" method="POST">
-                        <div class="card">
-                            <h2>Φόρμα Επικοινωνίας</h2>
-                            <input type="hidden" name="access_key" value="a963eeff-136f-45c5-b924-a88f6c94491a">
-
-                            <input type="text" name="name" id="name" placeholder="Your name" required>
-                            <input type="email" name="email" id="email" placeholder="Your email address" required>
-                            <textarea name="message" id="t1" placeholder="Your message"></textarea>
-                            <button type="submit" class="submit-button">Send Message <img src="Images/send.svg" alt=""></button>
-                        </div>
-                    </form>
-                </div>
-
-                <div class="map">
-                    <h2>Χάρτης</h2>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8253.007732731057!2d21.83129191566496!3d40.10190476493476!2m3!1f41.589366401779046!2f43.8489936170198!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x135835a597bf9b41%3A0xce4d25d484e33ccc!2sDelino%20Family%20Farm!5e1!3m2!1sel!2sgr!4v1784462907094!5m2!1sel!2sgr" width="100%" height="400px" style="border:0; border-radius:15px;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                </div>
-                
+            <div class="product-images">
+                <img src="images/fraoula.jpg" alt="Μαρμελάδα Φράουλα">
+                <img src="images/home.jpg" alt="Μαρμελάδα Φράουλα">
             </div>
         </div>
     </main>
-
-
-
 
 
 
@@ -93,6 +66,7 @@
             <p>Copyright &copy; 2026 Delino Farm. All rights reserved.</p>
         </div> 
     </footer>
+
 
     <script src="app.js"></script>
 </body>
