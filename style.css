@@ -301,19 +301,174 @@ main{
     gap: 1rem;
 }
 
+.inside-category p {
+    flex: 1; 
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 1rem;
+}
+
+/*start of slideshow*/
+
+.slideshow {
+    position: relative;
+    z-index: 0; 
+    flex: 1;
+    min-width: 0; 
+    
+    height: 400px; 
+    margin: 2rem;
+    
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.348);
+    text-align: center; 
+}
+
+.slideshow .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.slideshow input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Οι τελίτσες (Dots) */
+.slideshow label {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: solid 2px white;
+    border-radius: 50%;
+    background-color: transparent;
+    margin-top: 360px; /* Φέρνει τις τελίτσες ακριβώς στο κάτω μέρος */
+    margin-left: 6px;
+    margin-right: 6px;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+.slideshow input:checked + label {
+    background-color: white;
+}
+
+/* Αριστερό Βελάκι */
+.slideshow input + label::after {
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512' width='100' style='fill:white'%3E%3Cpath d='M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px 40px;
+    position: absolute;
+    height: 100%;
+    width: 60px;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    cursor: pointer;
+    transition: background-size 0.2s;
+}
+
+.slideshow input + label:hover::after {
+    background-size: 50px 50px;
+}
+
+/* Κρύβουμε τα βελάκια ανάλογα την ενεργή διαφάνεια */
+.slideshow input:checked + label::after {
+    display: none;
+}
+
+.slideshow input:checked + label + .slide ~ input + label::after {
+    display: none;
+}
+
+/* Δεξί Βελάκι */
+.slideshow input:checked + label + .slide + input + label::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512' width='100' fill='white'%3E%3Cpath d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z' /%3E%3C/svg%3E");
+    display: block;
+    width: 60px;
+    right: 0;
+    left: auto;
+}
+
+/* Οι Διαφάνειες (Εικόνες) */
+.slideshow .slide {
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Τις βάζει κάτω από τις τελίτσες και τα βελάκια */
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Μαύρο ημιδιάφανο gradient στο κάτω μέρος των εικόνων για να φαίνονται πάντα καθαρά οι άσπρες τελίτσες */
+.slideshow .slide::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 25%);
+}
+
+.slideshow input:checked ~ .slide {
+    transform: translateX(100%);
+}
+
+.slideshow input:checked + label + .slide {
+    transform: translateX(0);
+}
+
+/* Οι Εικόνες του Slider */
+.slideshow .bg1 { background-image: url(images/goat.jpg); }
+.slideshow .bg2 { background-image: url(images/home.jpg); }
+.slideshow .bg3 { background-image: url(images/moregoat.jpg); }
+.slideshow .bg4 { background-image: url(images/goat.jpg); }
+.slideshow .bg5 { background-image: url(images/goat.jpg); }
+/*end of slideshow*/
+
 @media (max-width: 800px) {
     .category:nth-child(odd), .category:nth-child(even) {
-          background: linear-gradient(white, white) padding-box,
-              linear-gradient(to top, #2a3f20d1, rgba(142, 142, 142, 0)) border-box;
-    border-radius: 10px;
-    border: 4px solid transparent;
-    margin: 4rem 0;
-    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.555);
-
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(to top, #2a3f20d1, rgba(142, 142, 142, 0)) border-box;
+        border-radius: 10px;
+        border: 4px solid transparent;
+        margin: 2rem 0; /* Στα κινητά καλό είναι να μικραίνουμε λίγο το κενό ανάμεσα στις κατηγορίες (ήταν 4rem) */
+        box-shadow: 0 1.5rem 2rem -0.75rem hsla(0, 0%, 0%, 0.555);
     }
+    
     .inside-category {
         flex-direction: column;
         gap: 1rem;
+    }
+    
+    .inside-category p {
+        order: 1; /* Αναγκάζει το κείμενο να βγει πρώτο (πάνω) */
+    }
+
+    .inside-category .slideshow {
+        order: 2; /* Αναγκάζει το slideshow να βγει δεύτερο (κάτω) */
+    }
+
+    .slideshow {
+        flex: none; /* Ακυρώνει το flex: 1 του υπολογιστή */
+        width: 95%; /* Στα κινητά θέλουμε να πιάνει όλο το πλάτος */
+        margin: 1rem; /* Αφήνει μικρό κενό μόνο πάνω-κάτω. Μηδενίζει το δεξιά-αριστερά! */
+        height: 300px; /* Μικραίνουμε λίγο το ύψος ώστε να φαίνεται τέλεια σε μικρές οθόνες */
+    }
+
+    .slideshow label {
+        margin-top: 260px; 
     }
 }
 
