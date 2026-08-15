@@ -413,6 +413,19 @@ main{
     transition: transform 0.4s ease-in-out;
 }
 
+.slideshow .slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Κάνει το βίντεο να λειτουργεί ακριβώς όπως το background-size: cover */
+    position: absolute;
+
+    object-position: 50% 80%;
+
+    top: 0;
+    left: 0;
+    z-index: -2; /* Το βάζει τέρμα πίσω για να φαίνονται οι τελείες και το μαύρο gradient από πάνω του */
+}
+
 /* Μαύρο ημιδιάφανο gradient στο κάτω μέρος των εικόνων για να φαίνονται πάντα καθαρά οι άσπρες τελίτσες */
 .slideshow .slide::before {
     content: '';
@@ -430,11 +443,15 @@ main{
 }
 
 /* Οι Εικόνες του Slider */
-.slideshow .bg1 { background-image: url(images/goat.jpg); }
-.slideshow .bg2 { background-image: url(images/home.jpg); }
-.slideshow .bg3 { background-image: url(images/moregoat.jpg); }
-.slideshow .bg4 { background-image: url(images/goat.jpg); }
-.slideshow .bg5 { background-image: url(images/goat.jpg); }
+.slideshow .bg1 { background-image: url(images/fraoula.jpg); }
+.slideshow .bg2 { background-image: url(images/gala.jpg); }
+.slideshow .bg3 { background-image: url(images/butter.jpg); }
+.slideshow .bg4 { background-image: url(images/claas.jpeg); }
+.slideshow .bg5 { background-image: url(images/claas2.jpg); }
+.slideshow .bg6 { background-image: url(images/proet3.png); }
+.slideshow .bg7 { background-image: url(images/moregoat.jpg); }
+.slideshow .bg8 { background-image: url(images/goat.jpg); }
+.slideshow .bg9 { background-image: url(images/hay.jpg); }
 /*end of slideshow*/
 
 @media (max-width: 800px) {
