@@ -288,8 +288,8 @@ main{
 .category:nth-child(odd) {
       background: linear-gradient(white, white) padding-box,
               linear-gradient(to right, #2a3f20d1, rgba(142, 142, 142, 0)) border-box;
-    border-radius: 10px;
-    border: 4px solid transparent;
+    border-radius: 100px;
+    border: 10px solid transparent;
     margin: 4rem 0;
     /*box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.555);*/
 }
@@ -297,8 +297,8 @@ main{
 .category:nth-child(even) {
       background: linear-gradient(white, white) padding-box,
               linear-gradient(to left, #2a3f20d1, rgba(142, 142, 142, 0)) border-box;
-    border-radius: 10px;
-    border: 4px solid transparent;
+    border-radius: 100px;
+    border: 10px solid transparent;
     margin: 4rem 0;
     /*box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.555);*/
 }
@@ -469,7 +469,7 @@ main{
                     linear-gradient(to top, #2a3f20d1, rgba(142, 142, 142, 0)) border-box;
         border-radius: 10px;
         border: 4px solid transparent;
-        margin: 2rem 0; /* Στα κινητά καλό είναι να μικραίνουμε λίγο το κενό ανάμεσα στις κατηγορίες (ήταν 4rem) */
+        margin: 2rem 0; 
         box-shadow: 0 1.5rem 2rem -0.75rem hsla(0, 0%, 0%, 0.555);
     }
     
