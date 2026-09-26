@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Delino Farm | Αρχική</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4N5WRN27PV"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-4N5WRN27PV');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -46,9 +57,11 @@
 
             <div class="categories-container">
                 <div class="category">
-                    <h2>Προϊόντα</h2>
                     <div class="inside-category">
-                        <p>mplampla</p>
+                        <div class="text">
+                            <h2>Προϊόντα</h2>
+                            <p>mplampla</p>
+                        </div>
                         <div class="slideshow">
                             <!-- ΠΡΟΣΟΧΗ: Εδώ το name είναι slider1 -->
                             <input type="radio" id="trigger1" name="slider1" checked>
@@ -67,10 +80,8 @@
                 </div>
 
                 <div class="category">
-                    <h2>Αγροτικές Εργασίες</h2>
                     <div class="inside-category">
                         <div class="slideshow">
-                            <!-- ΠΡΟΣΟΧΗ: Εδώ το name είναι slider2 και id=trigger4 & 5 -->
                             <input type="radio" id="trigger4" name="slider2" checked>
                             <label for="trigger4"><span class="sr-only">Slide 4</span></label>
                             <div class="slide bg4"></div>
@@ -79,14 +90,20 @@
                             <label for="trigger5"><span class="sr-only">Slide 5</span></label>
                             <div class="slide bg5"></div>
                         </div>
-                        <p>mplampla</p>
+                        <div class="text">
+                            <h2>Αγροτικές Εργασίες</h2>
+                            <p>mplampla</p>
+                        </div>
                     </div>
                 </div>
 
+                
                 <div class="category">
-                    <h2>Κτηνοτροφία</h2>
                     <div class="inside-category">
-                        <p>mplampla</p>
+                        <div class="text">
+                            <h2>Κτηνοτροφία</h2>
+                            <p>mplamplakjfhjk kjashdashdkjashdkjh kajsdgkjadkjasdh asjdhksjadh kjashdkjashd aksjdhkajsdh jshd jshdkjhs jshjdhs jshdjsakd</p>
+                        </div>
                         <div class="slideshow">
                             <!-- ΠΡΟΣΟΧΗ: Εδώ το name είναι slider3 και id=trigger6 & 7 -->
                             <input type="radio" id="trigger6" name="slider3" checked>
@@ -111,6 +128,10 @@
             </div>
         </div>
     </main>
+
+    <a href="#" class="top-button">
+        <span class="material-icons">keyboard_arrow_up</span>
+    </a>
 
 
 

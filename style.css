@@ -5,6 +5,10 @@ body{
     margin: 0;   
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 .navbar, .mobile_navbar{
     background-color: #2a3f20;
     backdrop-filter: blur(10px);
@@ -96,6 +100,45 @@ body{
 .mobile_navbar li:first-child{
     height: 110px;
 }
+
+/* Back to Top Button Styles */
+.top-button {
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #2a3f20e3;
+	border-radius: 2rem;
+	padding: 0.2rem;
+	text-decoration: none;
+	transition: 0.2s ease-out;
+
+    opacity: 0;
+    pointer-events: none; 
+    transition: all 0.3s ease-out
+}
+
+.top-button.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.top-button span {
+	color: #fff;
+	font-size: 3rem;
+	transition: 0.2s ease-out;
+}
+
+.top-button:hover {
+	background-color: #2a3f20;
+}
+.top-button:hover span {
+	transform: translateY(-4px);
+}
+
+
 
 
 
@@ -276,10 +319,6 @@ main{
         gap: 1rem;
     }
 }
-/*end of index*/
-
-
-/*start of about*/
 
 .categories-container {
     width: 100%;    
@@ -287,7 +326,7 @@ main{
 
 .category:nth-child(odd) {
       background: linear-gradient(white, white) padding-box,
-              linear-gradient(to right, #2a3f20d1, rgba(142, 142, 142, 0)) border-box;
+              linear-gradient(to right, #2a3f20d1 0%, white 80%) border-box;
     border-radius: 100px;
     border: 10px solid transparent;
     margin: 4rem 0;
@@ -296,7 +335,7 @@ main{
 
 .category:nth-child(even) {
       background: linear-gradient(white, white) padding-box,
-              linear-gradient(to left, #2a3f20d1, rgba(142, 142, 142, 0)) border-box;
+              linear-gradient(to left, #2a3f20d1 0%, white 80%) border-box;
     border-radius: 100px;
     border: 10px solid transparent;
     margin: 4rem 0;
@@ -310,11 +349,17 @@ main{
     gap: 1rem;
 }
 
-.inside-category p {
+.inside-category .text {
+    flex-direction: column;
     flex: 1; 
     font-size: 1.2rem;
     line-height: 1.6;
     margin: 1rem;
+    text-align: center;
+}
+
+.inside-category .text h2{
+    margin-top: 0;
 }
 
 /*start of slideshow*/
@@ -330,7 +375,7 @@ main{
     
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.348);
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.542);
     text-align: center; 
 }
 
@@ -552,7 +597,7 @@ main{
     padding: 1.5rem;
     max-width: 1200px;
     margin: 6rem auto;
-    box-shadow: 0 1.5rem 3rem -0.75rem hsl(0, 0%, 0%);
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.801);
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
     font-size: clamp(0.9rem, 1.4vw, 2rem);
 
