@@ -113,11 +113,9 @@ html {
 	border-radius: 2rem;
 	padding: 0.2rem;
 	text-decoration: none;
-	transition: 0.2s ease-out;
 
     opacity: 0;
     pointer-events: none; 
-    transition: all 0.3s ease-out
 }
 
 .top-button.show {
