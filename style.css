@@ -217,14 +217,15 @@ footer .social-links svg:hover {
 
 .content .text-section h2, .content .text-section-white h2 {
     font-family:consolas, monospace;
-    font-size: clamp(1rem, 2vw, 2rem);
+    font-size: clamp(1.5rem, 1.6vw, 2rem);
     text-align: center;
 }
 
 .content .text-section p, .content .text-section-white p {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
-    font-size: clamp(0.9rem, 1.4vw, 2rem);
+    font-size: clamp(1.1rem, 1.4vw, 2rem);
     text-align: left;
+    font-family:consolas, monospace;
 }
 
 
@@ -272,7 +273,7 @@ main{
     text-shadow: 0px 0px 10px rgb(0, 0, 0);
 
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
-    font-size: clamp(0.9rem, 2vw, 3rem);   
+    font-size: clamp(1rem, 2vw, 3rem);   
 }
 
 .photo-section {
@@ -561,7 +562,7 @@ main{
 
 .contact li{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
-    font-size: clamp(0.9rem, 1.4vw, 2rem);
+    font-size: clamp(1.1rem, 1.4vw, 2rem);
 }
 
 .interactive {
@@ -588,7 +589,7 @@ main{
     margin: 6rem auto;
     box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.801);
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
-    font-size: clamp(0.9rem, 1.4vw, 2rem);
+    font-size: clamp(1.1rem, 1.4vw, 2rem);
 
 }
 
@@ -622,7 +623,7 @@ main{
     border-radius: 1rem;
     border: 3px solid #2a3f2058;
     font-family:consolas, monospace;
-    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-size: clamp(1.1rem, 3vw, 1.2rem);
     margin-bottom: min(2rem, 3vw);
     box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.795);
     transition: border 0.3s ease, box-shadow 0.3s ease;
@@ -648,7 +649,7 @@ main{
     color: black;
     font-family: consolas, monospace;
     padding: 1em 1em;
-    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-size: clamp(1.1rem, 3vw, 1.2rem);
     box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.795);
     cursor: pointer;
 }
