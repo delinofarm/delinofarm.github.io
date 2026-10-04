@@ -242,24 +242,13 @@ main{
 
 
 /*start of index*/
-
-.hero-image {
-    width: 100%;
-    aspect-ratio: 16 / 9; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    
-    background-image: 
-        linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, rgb(255, 255, 255) 98%),
-        url(images/home.webp);
-
-    background-size: 100% 101%, 100vw auto;
-    background-position: center, top;
-    background-repeat: no-repeat;
-    background-attachment: scroll, fixed;
+@keyframes fadeInHero {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
+
+
+
 
 .upper-text {
     width: min(90%, 1100px);
@@ -300,18 +289,6 @@ main{
 
 /* Ρυθμίσεις ΜΟΝΟ για κινητά και tablet (οθόνες κάτω από 800px) */
 @media (max-width: 800px) {
-    .hero-image {
-        aspect-ratio: auto; 
-        height: calc(100svh - 70px);
-        background-size: 100% 105%, cover;
-
-        background-image: 
-            linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, rgb(255, 255, 255) 94%),
-            url(images/home.jpg);        
-        /* 2. Κλείνουμε το fixed στα κινητά, καθώς προκαλεί bugs στον υπολογισμό του ύψους */
-        background-attachment: scroll, scroll;
-    }
-    
     .upper-text {
         /* Προαιρετικά: Μειώνουμε λίγο το κενό στο κάτω μέρος για τα κινητά */
         margin-bottom: 10vw; 
