@@ -63,7 +63,7 @@ html {
 }
 
 
-.navbar a, .mobile_navbar a{
+.navbar a{
     height: 100%;
     padding: 0 30px;
     text-decoration: none;
@@ -72,6 +72,17 @@ html {
     color: white;
     font-family:consolas, monospace;
     font-size: clamp(1.3rem, 2vw, 1.5rem);
+}
+
+.mobile_navbar a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-family:consolas, monospace;
+    font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 .navbar li:not(:first-child) a, 
