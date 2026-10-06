@@ -269,6 +269,13 @@ footer {
     text-align: center;
 }
 
+.footer-content img {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+    margin-top: 0;
+}
+
 /* =========================================
    FOOTER - ΚΙΝΗΤΑ (Media Query)
 ========================================= */
@@ -295,30 +302,19 @@ footer {
 }
 .section-wrapper1 {
     width: 100%;
-    background: linear-gradient(
-        to bottom, 
-        #ffffff 0px,
-        #e5e0ca 40px,
-        #e5e0ca calc(100% - 40px),
-        #787c63 100%
-    );
+    background-color: #e5e0ca;
 }
 .section-wrapper2 {
     width: 100%;
-    background: linear-gradient(
-        to bottom, 
-        #787c63 0px,
-        #787c63 calc(100% - 40px), /* Μένει λαδί μέχρι 40px πριν το τέλος */
-        #e5e0ca 100%               /* Σβήνει σε μπεζ */
-    );
+    background-color: #787c63;
 }
 .section-wrapper3 {
     width: 100%;
     background: linear-gradient(
         to bottom, 
         #e5e0ca 0px,
-        #e5e0ca calc(100% - 40px), /* Μένει μπεζ μέχρι 40px πριν το τέλος */
-        #ffffff 100%               /* Σβήνει σε λευκό */
+        #e5e0ca calc(100% - 40px),
+        #ffffff 100%     
     );
 }
 
@@ -408,7 +404,9 @@ main{
     justify-content: center;
     gap: 1rem;
     margin-top: 2rem;
+    margin-bottom: 4rem;
     width: 100%;
+    
 }
 
 .photo-section img {
