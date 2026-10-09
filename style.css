@@ -377,23 +377,11 @@ main{
     width: 100%;    
 }
 
-.category1 {
-      background: linear-gradient(white, white) padding-box,
-              linear-gradient(to right, #2a3f20d1 0%, white 80%) border-box;
-    border-radius: 100px;
-    border: 10px solid transparent;
+.category {
     margin: 4rem 0;
-    /*box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.555);*/
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.555);
 }
 
-.category2 {
-      background: linear-gradient(white, white) padding-box,
-              linear-gradient(to left, #2a3f20d1 0%, white 80%) border-box;
-    border-radius: 100px;
-    border: 10px solid transparent;
-    margin: 4rem 0;
-    /*box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.555);*/
-}
 
 .inside-category {
     display: flex;
