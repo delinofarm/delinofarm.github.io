@@ -693,9 +693,9 @@ main{
     justify-content: space-around;
 }
 
-.contact h3{
+.contact h2{
     font-size: clamp(1rem, 1.5vw, 2rem);
-    text-align: left;
+    text-align: center;
 }
 
 .contact ul{
@@ -717,6 +717,12 @@ main{
     width: 100%;
     justify-content: space-between;
     gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.interactive h2{
+    text-align: center;
+    color: #2a3f20;
 }
 
 .info {
@@ -751,6 +757,8 @@ main{
 .message{
     flex: 1;
 }
+
+
 
 .card{
     display: flex;
