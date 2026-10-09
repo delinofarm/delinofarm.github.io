@@ -3,6 +3,21 @@ body{
     display: flex;
     flex-direction: column;
     margin: 0;   
+    font-family: 'Tinos', serif;
+}
+
+h1, h2, h3, h4, h5, h6, .contact h3, .info h2 {
+    font-family: 'Libre Caslon Condensed', serif;
+    font-weight: 600; /* Μπορείς να παίξεις με το 400, 500, 600, 700 για το πάχος */
+}
+
+.navbar a, .mobile_navbar a, .top-button, .card button {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500; /* Για να είναι ευανάγνωστο το μενού */
+}
+
+.card input, .card textarea, .contact li, .info {
+    font-family: 'Tinos', serif;
 }
 
 html {
@@ -70,7 +85,6 @@ html {
     display: flex;
     align-items: center;
     color: white;
-    font-family:consolas, monospace;
     font-size: clamp(1.3rem, 2vw, 1.5rem);
 }
 
@@ -81,7 +95,6 @@ html {
     display: flex;
     align-items: center;
     color: white;
-    font-family:consolas, monospace;
     font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
@@ -175,48 +188,112 @@ html {
 
 
 
-footer{
-    background-color:#2a3f20;
-}
-
-footer p{
+footer {
+    background-color: #2a3f20;
     color: white;
-    text-align: center;
-    padding: 1rem;
-    font-family:consolas, monospace;
-    font-size: large;
+    padding: 4rem 20px 1rem 20px; /* Άπλετος χώρος πάνω και κάτω */
+    font-family: 'Tinos', serif;
 }
 
-footer h3{
-    color: white;
-    text-align: center;
-    font-family:consolas, monospace;
-    font-size: x-large;
-    margin-top: 1rem;
-}
-
-footer .social-links {
+/* Ο "σκελετός" που κρατάει τις 3 στήλες */
+.footer-content {
     display: flex;
-    justify-content: center;
-    gap: 3rem;              
-    padding: 1rem 0;
-    
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    max-width: 1100px; /* Κλειδώνει στο ίδιο πλάτος με το .content της σελίδας σου */
+    margin: 0 auto;
+    gap: 3rem;
 }
 
-footer .social-links li {
+/* Η κάθε μία στήλη ξεχωριστά */
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    font-family: 'Libre Caslon Condensed', serif;
+    color: white;
+    font-size: 1.8rem; /* Αντίστοιχο του x-large που είχες */
+    margin-bottom: 1.5rem;
+    text-align: left; /* Στους υπολογιστές τα θέλουμε στοιχισμένα αριστερά */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Απαλή γραμμή υπογράμμισης */
+    padding-bottom: 0.5rem;
+}
+
+.footer-section p {
+    font-size: 1.2rem; /* Αντίστοιχο του large που είχες */
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* Λίστες Πλοήγησης και Επικοινωνίας */
+.footer-links, .footer-contact {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-footer .social-links svg {
-    filter:invert(1);
-    width: clamp(30px, 5vw, 40px);
-    height: clamp(30px, 5vw, 40px);
-    object-fit: contain;
-    transition: filter 0.3s ease;
+.footer-links li, .footer-contact li {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
 }
 
-footer .social-links svg:hover {
-    filter:invert(0) drop-shadow(0px 10px 10px #00ff15);
+/* Links (σύνδεσμοι) μέσα στο Footer */
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Ειδικά τα links του μενού παίρνουν τη γραμματοσειρά του Navbar */
+.footer-links a {
+    font-family: 'EB Garamond', serif;
+}
+
+/* Hover εφέ στα links */
+.footer-section a:hover {
+    color: #a4c639; /* Ένα ανοιχτό λαχανί για να ξεχωρίζει στο hover */
+}
+
+/* Το κάτω μέρος με το Copyright */
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.footer-content img {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+    margin-top: 0;
+}
+
+/* =========================================
+   FOOTER - ΚΙΝΗΤΑ (Media Query)
+========================================= */
+@media (max-width: 800px) {
+    .footer-content {
+        flex-direction: column; /* Οι στήλες μπαίνουν η μία κάτω από την άλλη */
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .footer-section h3, 
+    .footer-section p {
+        text-align: center; /* Στα κινητά τα κεντράρουμε όλα για να δείχνουν όμορφα */
+    }
+
+    .footer-section h3 {
+        border-bottom: none; /* Βγάζουμε τη γραμμή στα κινητά γιατί στο κέντρο "χτυπάει" άσχημα */
+    }
 }
 
 .section-wrapper-white{
@@ -225,30 +302,19 @@ footer .social-links svg:hover {
 }
 .section-wrapper1 {
     width: 100%;
-    background: linear-gradient(
-        to bottom, 
-        #ffffff 0px,
-        #e5e0ca 40px,
-        #e5e0ca calc(100% - 40px),
-        #787c63 100%
-    );
+    background-color: #e5e0ca;
 }
 .section-wrapper2 {
     width: 100%;
-    background: linear-gradient(
-        to bottom, 
-        #787c63 0px,
-        #787c63 calc(100% - 40px), /* Μένει λαδί μέχρι 40px πριν το τέλος */
-        #e5e0ca 100%               /* Σβήνει σε μπεζ */
-    );
+    background-color: #787c63;
 }
 .section-wrapper3 {
     width: 100%;
     background: linear-gradient(
         to bottom, 
         #e5e0ca 0px,
-        #e5e0ca calc(100% - 40px), /* Μένει μπεζ μέχρι 40px πριν το τέλος */
-        #ffffff 100%               /* Σβήνει σε λευκό */
+        #e5e0ca calc(100% - 40px),
+        #ffffff 100%     
     );
 }
 
@@ -257,7 +323,6 @@ footer .social-links svg:hover {
     color: #2a3f20;
     margin-top: 3rem;
     margin-bottom:0;
-    font-family: consolas, monospace;
     padding-bottom:0;
 }
 
@@ -293,16 +358,13 @@ footer .social-links svg:hover {
 }
 
 .content .text-section h2, .content .text-section-white h2 {
-    font-family:consolas, monospace;
     font-size: clamp(1.5rem, 1.6vw, 2rem);
     text-align: center;
 }
 
 .content .text-section p, .content .text-section-white p {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
     font-size: clamp(1.1rem, 1.4vw, 2rem);
     text-align: left;
-    font-family:consolas, monospace;
 }
 
 
@@ -329,16 +391,11 @@ main{
     flex-direction: column;
     align-items: center;
     text-align: center;
-
     position: relative;
     z-index: 2;
-
     margin-bottom: 15vw;
-    
     color: white;
     text-shadow: 0px 0px 10px rgb(0, 0, 0);
-
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
     font-size: clamp(1rem, 2vw, 3rem);   
 }
 
@@ -347,7 +404,9 @@ main{
     justify-content: center;
     gap: 1rem;
     margin-top: 2rem;
+    margin-bottom: 4rem;
     width: 100%;
+    
 }
 
 .photo-section img {
@@ -588,7 +647,6 @@ main{
 }
 
 .contact h3{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
     font-size: clamp(1rem, 1.5vw, 2rem);
     text-align: left;
 }
@@ -603,7 +661,6 @@ main{
 }
 
 .contact li{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
     font-size: clamp(1.1rem, 1.4vw, 2rem);
     margin: 2rem auto;
 }
@@ -631,7 +688,6 @@ main{
     max-width: 1200px;
     margin: 3rem auto;
     box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.801);
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
     font-size: clamp(1.1rem, 1.4vw, 2rem);
 
 }
@@ -665,7 +721,6 @@ main{
     padding: 0.5rem;
     border-radius: 1rem;
     border: 3px solid #2a3f2058;
-    font-family:consolas, monospace;
     font-size: clamp(1.1rem, 3vw, 1.2rem);
     margin-bottom: min(2rem, 3vw);
     box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.795);
@@ -690,7 +745,6 @@ main{
     background-color: white;
     text-decoration: none;
     color: black;
-    font-family: consolas, monospace;
     padding: 1em 1em;
     font-size: clamp(1.1rem, 3vw, 1.2rem);
     box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.795);
@@ -747,7 +801,6 @@ main{
 .products-container {
     width: min(90%, 1100px);
     margin: 40px auto;
-    font-family: consolas, monospace;
 }
 
 .products-container h1, h2 {
@@ -858,7 +911,6 @@ main{
     margin: 0;
     font-size: 0.9rem;
     color: #555;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 /*end of products*/
