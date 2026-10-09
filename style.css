@@ -84,7 +84,7 @@ html {
     text-decoration: none;
     display: flex;
     align-items: center;
-    color: white;
+    color: #e5e0ca;
     font-size: clamp(1.3rem, 2vw, 1.5rem);
 }
 
@@ -94,7 +94,7 @@ html {
     text-decoration: none;
     display: flex;
     align-items: center;
-    color: white;
+    color: #e5e0ca;
     font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
@@ -468,8 +468,8 @@ main{
     position: relative;
     z-index: 2;
     margin-bottom: 15vw;
-    color: white;
-    text-shadow: 0px 0px 10px rgb(0, 0, 0);
+    color: #e5e0ca;
+    text-shadow: 0px 10px 20px rgb(0, 0, 0);
     font-size: clamp(1rem, 2vw, 3rem);   
 }
 
