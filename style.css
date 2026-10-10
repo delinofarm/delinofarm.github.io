@@ -322,6 +322,10 @@ footer {
 .section-wrapper1 h2, 
 .section-wrapper1 p {
     color: #2a3f20;
+    
+}
+.section-wrapper1 p {
+    text-shadow: 0px 10px 20px rgba(0, 0, 0, 0.286);
 }
 .section-wrapper1 h1 {
     margin-top: 3rem;
@@ -604,6 +608,7 @@ main{
     color: #e5e0ca;
     text-align: center;
     margin-top: 50px; 
+
 }
 
 .inside-category-products p {
@@ -612,6 +617,8 @@ main{
     color: #e5e0ca;
     text-align: center;
     margin-bottom: 2rem;
+    text-shadow: 0px 10px 20px rgba(0, 0, 0, 0.778);
+
 }
 
 .inside-category .text {
@@ -629,6 +636,8 @@ main{
 
 .inside-category p{
     font-size: 1.5rem;
+    text-shadow: 0px 10px 20px rgba(0, 0, 0, 0.304);
+
 }
 
 /*start of slideshow*/
