@@ -764,6 +764,15 @@ main{
         display: block;
     }
 
+    .category {
+        margin-top:0;
+        margin-bottom: 2rem;
+    }
+
+    .inside-category-products h2:first-child {
+        margin-top: 0;
+    }
+
 
     
     
