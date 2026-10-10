@@ -392,6 +392,37 @@ footer {
     background: linear-gradient(to right, transparent, #2a3f20, transparent);
 }
 
+/* =========================================
+   ΠΡΟΣΑΡΜΟΓΗ ΓΡΑΜΜΑΤΟΣΕΙΡΩΝ ΓΙΑ ΚΙΝΗΤΑ (Mobile)
+========================================= */
+@media (max-width: 800px) {
+    
+    /* 1. Ρύθμιση για όλους τους Κεντρικούς Τίτλους (h1) */
+    .section-wrapper1 h1,
+    .section-wrapper2 h1,
+    .section-wrapper3 h1,
+    .title h1 {
+        font-size: 2.0rem; /* Ιδανικό, ευανάγνωστο μέγεθος για κινητά */
+        margin-top: 2rem;  /* Μικραίνουμε ελαφρώς το κενό από πάνω (από 3rem σε 2rem) */
+    }
+
+    /* 2. Ρύθμιση για όλους τους Υπότιτλους (h2) */
+    .section-wrapper1 h2,
+    .section-wrapper2 h2,
+    .section-wrapper3 h2 {
+        font-size: 1.5rem;
+    }
+
+    /* 3. Ρύθμιση για όλες τις παραγράφους / κείμενα (p) */
+    .section-wrapper1 p,
+    .section-wrapper2 p,
+    .section-wrapper3 p {
+        font-size: 1.1rem; /* Όχι πολύ μικρό, για να μη χρειάζεται ζουμ ο χρήστης */
+        line-height: 1.6; /* Αφήνει ωραίο "αέρα" ανάμεσα στις γραμμές του κειμένου */
+        padding: 0 15px; /* (Προαιρετικό) Βάζει λίγο κενό δεξιά-αριστερά για να μην κολλάει το κείμενο στις άκρες της οθόνης */
+    }
+}
+
 .title h1{
     text-align: center;
     color: #2a3f20;
@@ -1005,9 +1036,32 @@ main{
 
     background-color: #6b6e58a6; 
     
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.596);
+    /* -- ΤΟ ΝΕΟ 3D ΕΦΕ -- */
+    border: 2px solid #2a3f20; /* Σκούρο πράσινο περίγραμμα */
     
-    transition: background-color 0.4s ease-out, box-shadow 0.4s ease-out, border-color 0.4s ease-out;
+    /* Η πολλαπλή "συμπαγής" σκιά που δημιουργεί τον 3D όγκο */
+    box-shadow: 
+        /* --- ΠΡΑΣΙΝΗ ΣΚΙΑ --- */
+        1px 1px 0 0 #2a3f20, 
+        2px 2px 0 0 #2a3f20, 
+        3px 3px 0 0 #2a3f20, 
+        4px 4px 0 0 #2a3f20, 
+        5px 5px 0 0 #2a3f20, 
+        6px 6px 0 0 #2a3f20, 
+        7px 7px 0 0 #2a3f20, 
+        8px 8px 0 0 #2a3f20, 
+        9px 9px 0 0 #2a3f20, 
+        10px 10px 0 0 #2a3f20,
+        /* --- ΛΕΥΚΗ ΣΚΙΑ (ΕΞΩΤΕΡΙΚΑ) --- */
+        12px 12px 15px #e5e0ca55;
+
+    position: relative;
+    cursor: pointer;
+    /* Αρχική θέση χωρίς περιστροφή */
+    transform: translate(0, 0) rotateX(0) rotateY(0) rotateZ(0);
+    
+    /* Ένα ενιαίο transition για να είναι βελούδινη η κίνηση */
+    transition: all 400ms ease;
 }
 
 .product-card img {
@@ -1036,13 +1090,17 @@ main{
 }
 
 .product-card:hover {
-    background-color: #2a3f20; /* Εδώ βάζεις το χρώμα */
-    transition: background-color 0.4s ease-in, box-shadow 0.4s ease-in, border-color 0.4s ease-in;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.253); 
+    
+    /* 1. Εξαφανίζουμε την 3D σκιά (για να φανεί ότι βούλιαξε) */
+    box-shadow: none; 
+    
+    /* 2. Μετακινούμε την κάρτα 10px κάτω και δεξιά (εκεί που ήταν η σκιά) 
+          και προσθέτουμε την ελαφριά 3D κλίση που σου άρεσε! */
+    transform: translate(10px, 10px) rotateX(5deg) rotateY(3deg) rotateZ(0.25deg);
 }
 
 .product-card:hover img {
-    transform: scale(1.12); /* Η εικόνα του προϊόντος κάνει zoom in 12% */
+    /*transform: scale(1.12);*/
 }
 
 
