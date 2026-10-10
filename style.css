@@ -616,7 +616,7 @@ main{
     text-align: center;
     margin-bottom: 2rem;
     text-shadow: 0px 10px 20px rgba(0, 0, 0, 0.778);
-
+    padding: 0 6rem;
 }
 
 .inside-category .text {
@@ -791,6 +791,10 @@ main{
 
     .inside-category-products h2:first-child {
         margin-top: 0;
+    }
+
+    .inside-category-products p {
+        padding: 0 1rem;
     }
 
 
