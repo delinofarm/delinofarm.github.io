@@ -231,6 +231,7 @@ footer {
     list-style: none;
     padding: 0;
     margin: 0;
+    font-family: 'Libre Caslon Condensed', serif;
 }
 
 .footer-links li, .footer-contact li {
