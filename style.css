@@ -160,6 +160,7 @@ html {
 	align-items: center;
 	justify-content: center;
 	background-color: #2a3f20e3;
+    border: 2px solid #223319;
 	border-radius: 2rem;
 	padding: 0.2rem;
 	text-decoration: none;
@@ -1162,7 +1163,7 @@ main{
     gap: 3rem;
     margin-top: 2rem;
     width: 100%;
-    height: 500px
+    height: auto;
 }
 
 .product-images img {
@@ -1196,7 +1197,117 @@ main{
 
 
 
+/* =========================================
+   1. ΔΙΑΤΑΞΗ: ΕΙΚΟΝΑ ΚΑΙ ΣΥΝΤΑΓΗ ΔΙΠΛΑ-ΔΙΠΛΑ (PC)
+========================================= */
+.product-images-recipe {
+    display: flex;
+    flex-direction: row; /* Δίπλα-δίπλα */
+    align-items: flex-start; /* Ευθυγράμμιση στην κορυφή */
+    gap: 4rem; /* Κενό ανάμεσα σε εικόνα και συνταγή */
+    margin-top: 2rem;
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+}
 
+/* Η Εικόνα (Αριστερά - 40%) */
+.product-images-recipe > img {
+    flex: 0 0 40%; 
+    max-width: 500px;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsl(0, 0%, 0%);
+}
+
+/* Το κουτί της Συνταγής (Δεξιά - 60%) */
+.product-images-recipe .recipe {
+    flex: 1 1 60%;
+    width: 100%;
+}
+
+
+/* =========================================
+   2. ΕΣΩΤΕΡΙΚΟ ΤΗΣ ΣΥΝΤΑΓΗΣ (Υλικά & Εκτέλεση)
+========================================= */
+.recipe-layout {
+    display: flex;
+    gap: 40px; 
+    margin-top: 20px;
+    flex-wrap: wrap; /* Στα κινητά θα πάνε το ένα κάτω από το άλλο */
+}
+
+/* Στήλες Υλικών και Εκτέλεσης */
+.recipe-ingredients, .recipe-steps {
+    flex: 1 1 250px;
+}
+
+/* Τίτλοι μέσα στη συνταγή */
+.recipe-layout h4 {
+    color: #2a3f20;
+    border-bottom: 2px solid #787c63;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   3. CHECKBOXES ΚΑΙ ΔΙΑΓΡΑΦΗ ΚΕΙΜΕΝΟΥ
+========================================= */
+.check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #2a3f20;
+}
+
+/* Το τετραγωνάκι */
+.check-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-top: 4px;
+    accent-color: #2a3f20; /* Πράσινο χρώμα όταν τσεκάρεται */
+    flex-shrink: 0; /* Απαγορεύει στο κουτάκι να μικρύνει! */
+}
+
+/* Το κείμενο δίπλα στο κουτάκι */
+.check-item span {
+    transition: all 0.3s ease;
+}
+
+/* Όταν τσεκάρεται το κουτάκι -> Διαγράφεται το κείμενο */
+.check-item input[type="checkbox"]:checked + span {
+    text-decoration: line-through;
+    color: #787c63;
+}
+
+
+/* =========================================
+   4. ΠΡΟΣΑΡΜΟΓΗ ΓΙΑ ΚΙΝΗΤΑ (Mobile)
+========================================= */
+@media (max-width: 800px) {
+    /* Εικόνα και συνταγή το ένα κάτω από το άλλο */
+    .product-images-recipe {
+        flex-direction: column; 
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .product-images-recipe > img {
+        flex: 1 1 auto;
+        max-width: 100%; /* Η εικόνα απλώνεται σε όλο το κινητό */
+    }
+
+    .product-images-recipe .recipe {
+        flex: 1 1 auto;
+    }
+}
 
 
 
