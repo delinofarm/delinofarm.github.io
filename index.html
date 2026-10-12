@@ -35,7 +35,6 @@
             position: relative; /* Σημαντικό για να λειτουργήσει το στρώμα της εικόνας */
         }
 
-        /* 2. Φτιάχνουμε ένα "στρώμα" πάνω από το πράσινο, όπου θα μπει η εικόνα */
         .hero-image::before {
             content: "";
             position: absolute;
@@ -44,7 +43,6 @@
             right: 0; 
             bottom: 0;
             
-            /* Μεταφέρουμε όλα τα στοιχεία της εικόνας εδώ */
             background-image: 
                 linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, #e5e0ca 98%),
                 url(images/home.webp);
@@ -53,10 +51,9 @@
             background-repeat: no-repeat;
             background-attachment: scroll, fixed;
 
-            /* 3. Το animation μπαίνει ΜΟΝΟ στην εικόνα, όχι στο πράσινο φόντο! */
             opacity: 0;
-            animation: fadeHero 1.5s ease-out forwards;
-            z-index: 1; /* Κρατάει την εικόνα πάνω από το πράσινο χρώμα */
+            animation: fadeHero 2s ease-out forwards;
+            z-index: 1;
         }
 
         /* 4. Βεβαιωνόμαστε ότι το περιεχόμενο (π.χ. τίτλοι, λογότυπο) θα είναι ΠΑΝΩ από την εικόνα */
@@ -73,9 +70,11 @@
         @media (max-width: 800px) {
             .hero-image {
                 aspect-ratio: auto; 
-                height: calc(100svh - 70px);
-                background-size: 100% 105%, cover;
+                height: calc(100svh - 70px); 
+            }
 
+            .hero-image::before {
+                background-size: 100% 105%, cover;
                 background-image: 
                     linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, #e5e0ca 94%),
                     url(images/home.jpg);        
