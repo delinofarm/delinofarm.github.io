@@ -1209,9 +1209,9 @@ main{
 
 
 
-/* =========================================
-   1. ΔΙΑΤΑΞΗ: ΕΙΚΟΝΑ ΚΑΙ ΣΥΝΤΑΓΗ ΔΙΠΛΑ-ΔΙΠΛΑ (PC)
-========================================= */
+
+
+
 .product-images-recipe {
     display: flex;
     flex-direction: row; /* Δίπλα-δίπλα */
@@ -1223,7 +1223,6 @@ main{
     margin-bottom: 2rem;
 }
 
-/* Η Εικόνα (Αριστερά - 40%) */
 .product-images-recipe > img {
     flex: 0 0 40%; 
     max-width: 500px;
@@ -1234,16 +1233,11 @@ main{
     box-shadow: 0 1.5rem 3rem -0.75rem hsl(0, 0%, 0%);
 }
 
-/* Το κουτί της Συνταγής (Δεξιά - 60%) */
 .product-images-recipe .recipe {
     flex: 1 1 60%;
     width: 100%;
 }
 
-
-/* =========================================
-   2. ΕΣΩΤΕΡΙΚΟ ΤΗΣ ΣΥΝΤΑΓΗΣ (Υλικά & Εκτέλεση)
-========================================= */
 .recipe-layout {
     display: flex;
     gap: 40px; 
@@ -1251,12 +1245,10 @@ main{
     flex-wrap: wrap; /* Στα κινητά θα πάνε το ένα κάτω από το άλλο */
 }
 
-/* Στήλες Υλικών και Εκτέλεσης */
 .recipe-ingredients, .recipe-steps {
     flex: 1 1 250px;
 }
 
-/* Τίτλοι μέσα στη συνταγή */
 .recipe-layout h4 {
     color: #2a3f20;
     border-bottom: 2px solid #787c63;
@@ -1273,9 +1265,6 @@ main{
 }
 
 
-/* =========================================
-   3. CHECKBOXES ΚΑΙ ΔΙΑΓΡΑΦΗ ΚΕΙΜΕΝΟΥ
-========================================= */
 .check-item {
     display: flex;
     align-items: flex-start;
@@ -1286,7 +1275,6 @@ main{
     color: #2a3f20;
 }
 
-/* Το τετραγωνάκι */
 .check-item input[type="checkbox"] {
     width: 20px;
     height: 20px;
@@ -1297,21 +1285,15 @@ main{
     
 }
 
-/* Το κείμενο δίπλα στο κουτάκι */
 .check-item span {
     transition: all 0.3s ease;
 }
 
-/* Όταν τσεκάρεται το κουτάκι -> Διαγράφεται το κείμενο */
 .check-item input[type="checkbox"]:checked + span {
     text-decoration: line-through;
     color: #787c63;
 }
 
-
-/* =========================================
-   4. ΠΡΟΣΑΡΜΟΓΗ ΓΙΑ ΚΙΝΗΤΑ (Mobile)
-========================================= */
 @media (max-width: 1200px) {
     /* Εικόνα και συνταγή το ένα κάτω από το άλλο */
     .product-images-recipe {
@@ -1331,9 +1313,11 @@ main{
 }
 
 
-
-
-
+#instagram {
+    min-height: 550px; /* Μπορείς να το αυξομειώσεις αν το widget σου είναι πιο κοντό ή πιο ψηλό */
+    display: flex;
+    justify-content: center;
+}
 
 
 
