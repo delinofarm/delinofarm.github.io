@@ -1302,7 +1302,8 @@ main{
 
 .check-item {
     display: flex;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
     gap: 15px;
     margin-bottom: 15px;
     cursor: pointer;
