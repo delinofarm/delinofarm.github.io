@@ -167,6 +167,7 @@ html {
 
     opacity: 0;
     pointer-events: none; 
+    z-index: 100;
 }
 
 .top-button.show {
@@ -498,6 +499,22 @@ main{
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*start of index*/
 @keyframes fadeInHero {
     0% { opacity: 0; }
@@ -576,6 +593,7 @@ main{
 
     border-radius: 12px;   /* Στρογγυλεμένες γωνίες */
     
+    
 }
 
 .inside-category {
@@ -637,8 +655,18 @@ main{
     font-size: 1.5rem;
 }
 
-/*start of slideshow*/
 
+
+
+
+
+
+
+
+
+
+
+/*start of slideshow*/
 .slideshow {
     position: relative;
     z-index: 0; 
@@ -668,7 +696,6 @@ main{
     pointer-events: none;
 }
 
-/* Οι τελίτσες (Dots) */
 .slideshow label {
     display: inline-block;
     width: 12px;
@@ -688,7 +715,6 @@ main{
     background-color: white;
 }
 
-/* Αριστερό Βελάκι */
 .slideshow input + label::after {
     content: '';
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512' width='100' style='fill:white'%3E%3Cpath d='M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z' /%3E%3C/svg%3E");
@@ -709,7 +735,6 @@ main{
     background-size: 50px 50px;
 }
 
-/* Κρύβουμε τα βελάκια ανάλογα την ενεργή διαφάνεια */
 .slideshow input:checked + label::after {
     display: none;
 }
@@ -718,7 +743,6 @@ main{
     display: none;
 }
 
-/* Δεξί Βελάκι */
 .slideshow input:checked + label + .slide + input + label::after {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512' width='100' fill='white'%3E%3Cpath d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z' /%3E%3C/svg%3E");
     display: block;
@@ -727,7 +751,6 @@ main{
     left: auto;
 }
 
-/* Οι Διαφάνειες (Εικόνες) */
 .slideshow .slide {
     position: absolute;
     background-position: center;
@@ -776,54 +799,56 @@ main{
 
 @media (max-width: 800px) {
     
-    /* 1. Το κεντρικό κουτί που κρατάει τα πάντα */
     .category .inside-category {
         display: grid;
         border-radius: 12px;
-        overflow: hidden; /* Κόβει οτιδήποτε πάει να βγει έξω από τις στρογγυλές γωνίες */
-        min-height: 250px; /* Εξασφαλίζει ότι η εικόνα θα έχει πάντα ένα ωραίο ύψος */
+        overflow: hidden;
+        min-height: 250px; 
+        box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.726);
     }
 
-    /* 2. Λέμε στην εικόνα και στο κείμενο να μπουν στον ίδιο χώρο (το ένα πάνω στο άλλο) */
     .category .inside-category .image,
     .category .inside-category .text {
         grid-area: 1 / 1;
-        /* Αντί για width/height 100%, λέμε στο Grid να διαχειριστεί τον χώρο σωστά */
         min-width: 0;
         min-height: 0;
+        
     }
 
-    /* 3. Η τέλεια εικόνα-background */
     .category .inside-category .image img {
         width: 100%; 
         height: 100%;
-        object-fit: cover; /* Γεμίζει όλο τον χώρο χωρίς να παραμορφώνεται */
+        object-fit: cover; 
         display: block;
         
-        /* ΤΟ ΜΥΣΤΙΚΟ: Σκοτεινιάζει ομοιόμορφα όλη την εικόνα αντί να βάζουμε μαύρο κουτί στο κείμενο */
-        filter: brightness(0.4); 
+        filter: brightness(0.47); 
+        
     }
 
-    /* 4. Το κείμενο, τέλεια κεντραρισμένο και περιορισμένο μέσα στην εικόνα */
     .category .inside-category .text {
-        z-index: 2; /* Πάνω από την εικόνα */
+        z-index: 2; 
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Κεντράρει κάθετα */
-        align-items: center;     /* Κεντράρει οριζόντια */
-        padding: 1.5rem;         /* Κενό γύρω-γύρω για να μην ακουμπάει στα όρια */
-        box-sizing: border-box;  /* Εμποδίζει το padding να μεγαλώσει το κουτί */
+        justify-content: center; 
+        align-items: center;     
+        padding: 1.5rem;         
+        box-sizing: border-box;
     }
 
-    /* 5. Τα ανοιχτόχρωμα γράμματα */
     .category .inside-category .text p {
-        color: #ffffff; /* Ολόλευκα γράμματα */
+        color: #e5e0ca; 
         text-align: center;
-        margin: 0; /* Βγάζουμε τα εξωτερικά κενά για να κεντραριστεί τέλεια */
+        margin: 0; 
         line-height: 1.6;
-        font-size: 1rem;
-        /* Μια ελαφριά σκιά στα γράμματα για να διαβάζονται τέλεια ακόμα κι αν η εικόνα έχει φωτεινά σημεία */
-        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); 
+        font-size: 1.1rem;
+
+        text-shadow: 1px 3px 4px rgb(0, 0, 0); 
+    }
+
+        .category .inside-category .text h2 {
+        color: #e5e0ca; 
+        text-align: center;
+        text-shadow: 1px 3px 4px rgb(0, 0, 0); 
     }
 
     /* --- Ο υπόλοιπος κώδικάς σου παραμένει ίδιος --- */
@@ -1165,7 +1190,7 @@ main{
     
     .product-card {
         /* Το 0 0 είναι το μυστικό: Κρατάει την κάρτα αυστηρά στο 50% του πλάτους χωρίς να την αφήνει να τεντώσει! */
-        flex: 0 0 calc(50% - 15px); 
+        flex: 0 0 calc(70% - 15px); 
         min-width: 140px; /* Προστασία για να μη γίνουν υπερβολικά στενές */
         padding: 15px 10px;
     }
