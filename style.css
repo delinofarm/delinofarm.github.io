@@ -289,7 +289,7 @@ footer {
     margin-top: 0;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 767px) {
     .footer-content {
         flex-direction: column; /* Οι στήλες μπαίνουν η μία κάτω από την άλλη */
         text-align: center;
@@ -413,7 +413,7 @@ footer {
 /* =========================================
    ΠΡΟΣΑΡΜΟΓΗ ΓΡΑΜΜΑΤΟΣΕΙΡΩΝ ΓΙΑ ΚΙΝΗΤΑ (Mobile)
 ========================================= */
-@media (max-width: 800px) {
+@media (max-width: 767px) {
     
     /* 1. Ρύθμιση για όλους τους Κεντρικούς Τίτλους (h1) */
     .section-wrapper1 h1,
@@ -558,8 +558,7 @@ main{
     margin-bottom: 2rem;
 }
 
-/* Ρυθμίσεις ΜΟΝΟ για κινητά και tablet (οθόνες κάτω από 800px) */
-@media (max-width: 800px) {
+@media (max-width: 767px) {
     .upper-text {
         /* Προαιρετικά: Μειώνουμε λίγο το κενό στο κάτω μέρος για τα κινητά */
         margin-bottom: 10vw; 
@@ -797,7 +796,7 @@ main{
 
 /*end of slideshow*/
 
-@media (max-width: 800px) {
+@media (max-width: 767px) {
     
     .category .inside-category {
         display: grid;
@@ -813,6 +812,7 @@ main{
         min-width: 0;
         min-height: 0;
         
+
     }
 
     .category .inside-category .image img {
@@ -831,19 +831,24 @@ main{
         flex-direction: column;
         justify-content: center; 
         align-items: center;     
-        padding: 1.5rem;         
+        padding:0;         
         box-sizing: border-box;
+        max-height: 100%;
     }
 
     .category .inside-category .text p {
-        color: #e5e0ca; 
-        text-align: center;
-        margin: 0; 
-        line-height: 1.6;
-        font-size: 1.1rem;
+    color: #e5e0ca; 
+    text-align: center;
+    margin: 0; 
+    line-height: 1.4; 
 
-        text-shadow: 1px 3px 4px rgb(0, 0, 0); 
-    }
+    overflow-wrap: break-word;
+    word-break: break-word;
+
+    font-size: 1.3rem;
+
+    text-shadow: 1px 3px 4px rgb(0, 0, 0); 
+}
 
         .category .inside-category .text h2 {
         color: #e5e0ca; 
@@ -1022,7 +1027,7 @@ main{
     vertical-align: middle;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 767px) {
     .contact ul {
         flex-direction: column;
         gap: 20px;
@@ -1182,7 +1187,7 @@ main{
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 767px) {
     .products-grid {
         justify-content: center; /* Κεντράρει το 3ο προϊόν (ή όποιο περισσεύει) στη μέση της κάτω σειράς */
         gap: 15px; /* Ελαφρώς μικρότερο κενό ανάμεσα στις κάρτες στα κινητά */
@@ -1247,7 +1252,7 @@ main{
     margin-bottom: 2rem;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 767px) {
     .product-images {
         flex-direction: column;
         gap: 1rem;
