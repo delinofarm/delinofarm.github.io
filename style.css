@@ -811,11 +811,11 @@ main{
     
     .category .inside-category {
         display: grid;
+        grid-template-columns: 1fr; /* Λέει στο κελί να πιάσει όλο το διαθέσιμο πλάτος */
+        width: 100%; /* Εξασφαλίζει ότι το κουτί ακολουθεί το 100vw του γονέα */
         border-radius: 0;
         overflow: hidden;
         min-height: 250px;
-        margin-top: 0;
-        margin-bottom: 0;
     }
 
 
@@ -830,18 +830,23 @@ main{
         box-shadow: 0 1rem 3rem -0.75rem hsla(0, 0%, 0%, 0.795);
     }
 
-    .category .inside-category .image,
+    /* Ξεχωρίζουμε την εικόνα για να την αναγκάσουμε να πιάσει 100% του χώρου */
+    .category .inside-category .image {
+        grid-area: 1 / 1;
+        width: 100%;
+        height: 100%;
+    }
+
     .category .inside-category .text {
         grid-area: 1 / 1;
         min-width: 0;
         min-height: 0;
-        
-
     }
 
     .category .inside-category .image img {
         width: 100%;
         height: 100%;
+        max-width: none; /* SOS: Ακυρώνει τυχόν περιορισμούς από τον κώδικα του PC! */
         object-fit: cover;
         display: block;
         filter: brightness(0.5);
