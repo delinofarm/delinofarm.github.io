@@ -586,16 +586,15 @@ main{
 }
 
 .category img{
-    width: 100%;           /* Πιάνει όσο χώρο του δίνει η κάρτα... */
-    max-width: 500px;      /* ...αλλά ΔΕΝ ξεπερνάει ποτέ τα 300px στις μεγάλες οθόνες */
-    min-width: 120px;      /* ...και ΔΕΝ γίνεται μικρότερο από 120px στα πολύ μικρά κινητά */
-    
-    height: auto;          /* Το ύψος ρυθμίζεται αυτόματα... */
-    aspect-ratio: 1 / 1;   /* ...για να δημιουργεί πάντα ένα ΤΕΛΕΙΟ τετράγωνο! */
+    width: 100%;          
+    max-width: 500px;    
+    min-width: 120px;      
+    height: auto;        
+    aspect-ratio: 1 / 1;   
     object-fit: cover;
 
-    border-radius: 12px;   /* Στρογγυλεμένες γωνίες */
-    
+    border-radius: 12px;  
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.384);
     
 }
 
@@ -633,11 +632,11 @@ main{
 
 .inside-category-products p {
     font-family: 'Tinos', serif;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: #e5e0ca;
     text-align: center;
     margin-bottom: 2rem;
-    text-shadow: 0px 10px 20px rgba(0, 0, 0, 0.778);
+    text-shadow: 0px 10px 20px rgba(0, 0, 0, 0.486);
     padding: 0 6rem;
 }
 
@@ -658,6 +657,11 @@ main{
     font-size: 1.5rem;
 }
 
+
+.drast-text{
+    font-size: 1.5rem;
+    text-align: center;
+}
 
 
 
@@ -908,6 +912,7 @@ main{
         margin-top: 260px; 
     }
 }
+
 
 /*end of about*/
 
