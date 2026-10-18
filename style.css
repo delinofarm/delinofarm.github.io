@@ -664,6 +664,19 @@ main{
 }
 
 
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.3s ease-out, transform 1.3s ease-out;
+    will-change: opacity, transform; /* Λέει στον browser να το τρέξει γρήγορα */
+}
+
+.fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 
 
 
@@ -825,13 +838,13 @@ main{
 
     .categories-container .category:first-child .inside-category,
     .categories-container .category:first-child .inside-category .image img {
-        border-radius: 12px 12px 0 0;
+        border-radius: 6px 6px 0 0;
     }
 
     .categories-container .category:last-child .inside-category,
     .categories-container .category:last-child .inside-category .image img {
-        border-radius: 0 0 12px 12px;
-        box-shadow: 0 1rem 3rem -0.75rem hsla(0, 0%, 0%, 0.795);
+        border-radius: 0 0 6px 6px;
+        box-shadow: 0 1rem 3rem -0.75rem hsla(0, 0%, 0%, 0.582);
     }
 
     /* Ξεχωρίζουμε την εικόνα για να την αναγκάσουμε να πιάσει 100% του χώρου */

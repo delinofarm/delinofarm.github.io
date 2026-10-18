@@ -20,3 +20,27 @@ window.addEventListener('scroll', () => {
         topButton.classList.remove('show'); 
     }
 });
+
+
+
+
+
+
+
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        // Αν το στοιχείο μπήκε στην οθόνη
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible'); // Βάλε την κλάση που το εμφανίζει
+            observer.unobserve(entry.target); // Σταμάτα να το παρακολουθείς (για να γίνει μόνο μια φορά)
+        }
+    });
+}, {
+    threshold: 0.45 
+});
+
+// Βρίσκουμε όλα τα στοιχεία με την κλάση .fade-in και βάζουμε το ραντάρ να τα κοιτάει
+document.querySelectorAll('.fade-in').forEach(element => {
+    observer.observe(element);
+});
