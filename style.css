@@ -1285,7 +1285,9 @@ main{
 }
 
 .product-images img {
+    flex:1;
     min-width: 0;
+     object-fit: cover;
     width: auto;
     height: auto;
     border-radius: 10px;
@@ -1387,19 +1389,21 @@ main{
     height: 20px;
     cursor: pointer;
     margin-top: 4px;
-    accent-color: #2a3f20; /* Πράσινο χρώμα όταν τσεκάρεται */
-    flex-shrink: 0; /* Απαγορεύει στο κουτάκι να μικρύνει! */
+    accent-color: #2a3f20; 
+    flex-shrink: 0;
     
 }
 
 .check-item span {
-    transition: all 0.3s ease;
+    transition: all 1s ease;
 }
 
 .check-item input[type="checkbox"]:checked + span {
     text-decoration: line-through;
     color: #787c63;
 }
+
+
 
 @media (max-width: 1200px) {
     /* Εικόνα και συνταγή το ένα κάτω από το άλλο */

@@ -29,10 +29,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            
-            /* 1. Βάζουμε το πράσινο χρώμα εδώ για να φαίνεται ΑΜΕΣΩΣ */
             background-color: #2a3f20; 
-            position: relative; /* Σημαντικό για να λειτουργήσει το στρώμα της εικόνας */
+            position: relative;
         }
 
         .hero-image::before {
@@ -56,7 +54,6 @@
             z-index: 1;
         }
 
-        /* 4. Βεβαιωνόμαστε ότι το περιεχόμενο (π.χ. τίτλοι, λογότυπο) θα είναι ΠΑΝΩ από την εικόνα */
         .hero-image > * {
             position: relative;
             z-index: 2; 
